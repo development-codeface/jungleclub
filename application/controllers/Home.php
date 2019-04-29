@@ -2840,7 +2840,7 @@ $data['userphoto'] = $this->obj_model->get_userphoto($user_id);
 
 		$data['list'] = $this->obj_model->get_location_list();
 
-		// print_r($data);exit;
+	//	print_r($data);exit;
 
 		$this->load->view('admin/listlocation', $data);
 		}
@@ -3028,6 +3028,8 @@ $data['userphoto'] = $this->obj_model->get_userphoto($user_id);
 		$flag = 0;
 		$file = $_FILES['ssss'];
 		$file_name = $file['name'];
+
+		
 		$file_tmp = $file['tmp_name'];
 		$file_ext = explode('.', $file_name);
 		$file_ext = strtolower(end($file_ext));
@@ -3042,6 +3044,54 @@ $data['userphoto'] = $this->obj_model->get_userphoto($user_id);
 		// echo $width;
 		// echo $height;
 
+		
+		
+		
+		
+		if(	($file_name) == null)
+		{
+			
+			
+
+		//	print_r($data);exit;
+
+	
+		//	$data['district'] =  $this->obj_model->get_table('district',array('status' => '0'));
+		// print_r($data['sub_category']);exit;
+		// $this->load->view($this->list_adverisements,$data);
+
+		$data['amenities'] = $this->obj_model->get_table(' amenities', array(
+			'status' => '1'
+		));
+
+		// print_r($data);exit;
+
+		$data['countries'] = $this->obj_model->get_table('countries', array(
+			'status' => '1'
+		));
+
+		//	print_r($data);exit;
+	$this->session->set_flashdata('msg', '<div class="alert alert-success text-center">please choose the image</div>');
+
+		$this->load->view('admin/addlocation', $data);
+		}
+else{
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		if (in_array($file_ext, $allowed))
 			{
 			$file_name_new = uniqid('', true) . '.' . $file_ext;
@@ -3144,6 +3194,7 @@ $data['userphoto'] = $this->obj_model->get_userphoto($user_id);
 
 		$this->load->view('admin/listlocation', $data);
 		}
+		}
 
 	public
 
@@ -3232,6 +3283,7 @@ $data['userphoto'] = $this->obj_model->get_userphoto($user_id);
 				}
 			}
 		}
+		
 
 	public
 
@@ -3649,6 +3701,7 @@ $data['userphoto'] = $this->obj_model->get_userphoto($user_id);
 
 		$flag = 0;
 		$file = $_FILES['ssss'];
+		
 		$file_name = $file['name'];
 		$file_tmp = $file['tmp_name'];
 		$file_ext = explode('.', $file_name);
@@ -3757,6 +3810,24 @@ $this->add['noperson']    = $this->input->post('noperson');
 			"jpeg"
 		);
 
+		
+		if(	$file_name == null)
+		{
+			
+	
+		$data['location'] = $this->obj_model->get_all_pac();
+		$data['amenities'] = $this->obj_model->get_table('amenities', array(
+			'status' => '1'
+		));
+		
+		$this->session->set_flashdata('msg1', '<div class="alert alert-success text-center">please choose the thumbnail image</div>');
+
+		$this->load->view('admin/addpackage', $data);
+			
+		}
+		else
+		{
+		
 		// print_r($file);
 		// echo $width;
 		// echo $height;
@@ -3838,6 +3909,25 @@ $this->add['noperson']    = $this->input->post('noperson');
 			"jpg",
 			"jpeg"
 		);
+	if($file_name==null)
+		{
+			
+		
+	
+			
+	
+		$data['location'] = $this->obj_model->get_all_pac();
+		$data['amenities'] = $this->obj_model->get_table('amenities', array(
+			'status' => '1'
+		));
+		
+		$this->session->set_flashdata('msg1', '<div class="alert alert-success text-center">please choose the slider image</div>');
+
+		$this->load->view('admin/addpackage', $data);
+			
+		}
+		else
+		{
 
 		// print_r($file);
 		// echo $width;
@@ -3916,7 +4006,11 @@ $this->add['noperson']    = $this->input->post('noperson');
 			"jpg",
 			"jpeg"
 		);
-
+		
+		
+		
+		
+	
 		// print_r($file);
 		// echo $width;
 		// echo $height;
@@ -3959,6 +4053,27 @@ $this->add['noperson']    = $this->input->post('noperson');
 		// print_r($file);
 		// echo $width;
 		// echo $height;
+		
+		
+		if($file_name==null)
+		{
+			
+		
+	
+			
+	
+		$data['location'] = $this->obj_model->get_all_pac();
+		$data['amenities'] = $this->obj_model->get_table('amenities', array(
+			'status' => '1'
+		));
+		
+		$this->session->set_flashdata('msg1', '<div class="alert alert-success text-center">please choose the gallery image</div>');
+
+		$this->load->view('admin/addpackage', $data);
+			
+		}
+		else
+		{
 
 		if (in_array($file_ext, $allowed))
 			{
@@ -4192,7 +4307,9 @@ $this->add['noperson']    = $this->input->post('noperson');
 		//	$this->load->view('admin/listlocation',$data);
 
 		}
-
+		}
+		}
+		}
 	public
 
 	function editpack()

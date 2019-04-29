@@ -393,10 +393,10 @@ class Users_model extends CI_Model
     {
         $this->db->select('location.*,locationimage.*, file.*,cities.*,address.*,location.id as lid');
         $this->db->from('location');
-        $this->db->join('locationimage', 'locationimage.location = location.id');
-        $this->db->join('file', 'file.id =  locationimage.file');
-        $this->db->join('address', 'address.id =  location.locationaddress');
-        $this->db->join('cities', 'cities.c_id =  address.city');
+        $this->db->join('locationimage', 'locationimage.location = location.id','left');
+        $this->db->join('file', 'file.id =  locationimage.file','left');
+        $this->db->join('address', 'address.id =  location.locationaddress','left');
+        $this->db->join('cities', 'cities.c_id =  address.city','left');
         $this->db->where('location.status', 1);
         $query = $this->db->get();
         $row   = $query->result_array();
