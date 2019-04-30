@@ -2362,7 +2362,7 @@ $data['userphoto'] = $this->obj_model->get_userphoto($user_id);
 		$data['personcount'] = $this->input->post('no_person');
 
 		// /////////////////////////////////
-
+$data['authURL'] = $this->facebook->login_url();
 		$data['countries'] = $this->obj_model->get_table('countries', array(
 			'status' => '1'
 		));
@@ -2701,7 +2701,57 @@ $data['userphoto'] = $this->obj_model->get_userphoto($user_id);
 	function resetpass()
 		{
 		$params = $this->input->post('reemail');
+	
 		$unameTest = $this->obj_model->checkmail($params);
+		//print_r($unameTest);exit;
+		
+		
+		
+		
+		
+		/*
+		
+			$toEmail = $this->input->post('email');
+			$this->load->library('email');
+		$this->load->library('parser');
+		$config = Array(
+			'protocol' => 'MAIL_DRIVER',
+			'MAIL_HOST' => 'mail.codefacetech.com',
+			'MAIL_PORT' => 26,
+			'MAIL_USERNAME' => 'jungle@codefacetech.com',
+			'MAIL_PASSWORD' => 'DpS]%E757#d*',
+			'mailtype' => 'html',
+			'charset' => 'utf-8'
+		);
+		$this->email->initialize($config);
+		$this->email->set_newline("\r\n");
+		$clean = $this->security->xss_clean($this->input->post(NULL, TRUE));
+		$data['check_in'] = $this->input->post('in');
+
+		// $loname= $this->obj_model->locname($lo);
+		// print_r($loname);exit;
+		// $data['locname']=$loname;
+
+		
+		
+			$state = $this->input->post('state');
+		$city = $this->input->post('city');
+		$country = $this->input->post('country');
+	
+		
+		
+		*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		$str = '';
 		if (count($unameTest) == 0)
 			{
@@ -2711,7 +2761,7 @@ $data['userphoto'] = $this->obj_model->get_userphoto($user_id);
 			{
 			foreach($unameTest as $uname)
 				{
-				$user = $uname['user_id'];
+				$user = $uname['id'];
 				}
 
 			//	echo $user;exit;
@@ -2723,14 +2773,14 @@ $data['userphoto'] = $this->obj_model->get_userphoto($user_id);
 
 			$this->load->library('email');
 			$config = Array(
-				'protocol' => 'MAIL_DRIVER',
-				'MAIL_HOST' => 'mail.codefacetech.com',
-				'MAIL_PORT' => 26,
-				'MAIL_USERNAME' => 'jungle@codefacetech.com',
-				'MAIL_PASSWORD' => 'DpS]%E757#d*',
-				'mailtype' => 'html',
-				'charset' => 'utf-8'
-			);
+			'protocol' => 'MAIL_DRIVER',
+			'MAIL_HOST' => 'mail.codefacetech.com',
+			'MAIL_PORT' => 26,
+			'MAIL_USERNAME' => 'jungle@codefacetech.com',
+			'MAIL_PASSWORD' => 'DpS]%E757#d*',
+			'mailtype' => 'html',
+			'charset' => 'utf-8'
+		);
 			$this->email->initialize($config);
 			$this->email->set_newline("\r\n");
 			$clean = $this->security->xss_clean($this->input->post(NULL, TRUE));
@@ -3275,7 +3325,7 @@ else{
 				$data['package'] = $this->obj_model->get_all_package_details($pack_id);
 
 				// print_r($data);
-
+$data['authURL'] = $this->facebook->login_url();
 				$this->load->view('detail', $data);
 
 				//     $this->load->view("detail", $this->data);
@@ -4820,12 +4870,12 @@ $this->add['noperson']    = $this->input->post('noperson');
 		$data['packsliderss'] = $this->obj_model->get_slider_pack($pack_id);
 
 		// print_r($data['packsliderss']);
-
+$data['packages'] = $this->obj_model->getpackageimg();
 		$data['location'] = $this->obj_model->getlocationimg();
-		$data['package'] = $this->obj_model->get_all_package_details($pack_id);
-
+	//	$data['package'] = $this->obj_model->get_all_package_details($pack_id);
+$data['packaminities'] = $this->obj_model->getpackamini($pack_id);
 		// print_r($data);
-
+$data['authURL'] = $this->facebook->login_url();
 		$this->load->view('detail', $data);
 		}
 
@@ -4852,7 +4902,7 @@ $this->add['noperson']    = $this->input->post('noperson');
 
 		// print_r($data);
 		// $data['district']    = $this->obj_model->getlocationfull();
-
+$data['authURL'] = $this->facebook->login_url();
 		$data['district'] = $this->obj_model->getlocationfull();
 		$this->load->view('packagelist', $data);
 		}
@@ -4867,15 +4917,17 @@ $this->add['noperson']    = $this->input->post('noperson');
 		// $this->session->userdata('user_id');
 
 		$data['chkout'] = $this->session->userdata('toses');
+//print_r($data['package']);exit;
 		$data['package'] = $this->obj_model->get_all_package_details_view($pack_id);
-
 		// print_r($data);
 		// $data['packsliderss']    = $this->obj_model->getpacksliderimg($pack_id);
 
 		$data['packsliderss'] = $this->obj_model->get_slider_pack($pack_id);
 
 		$data['packages'] = $this->obj_model->getpackageimg();
-		// print_r($data['packsliderss']);
+		
+		$data['packaminities'] = $this->obj_model->getpackamini($pack_id);
+		//print_r($data['packaminities']);
 $data['location_package'] = $this->obj_model->get_location_package_detail();
 
 		$data['location'] = $this->obj_model->getlocationimg();
@@ -4902,7 +4954,7 @@ $data['location_package'] = $this->obj_model->get_location_package_detail();
 		$pack_id = $this->input->post('pakkid');
 		$data['package'] = $this->obj_model->get_all_package_details($pack_id);
 		//print_r($data['package']);exit;
-		
+		$data['authURL'] = $this->facebook->login_url();
 		$this->load->view('booking', $data);
 
 		//  $this->data['details']        = $this->obj_model->getlocdetail($loc_id);
@@ -5185,12 +5237,13 @@ $data['pakname'] = $this->obj_model->get_all_package_details_admin($a);
 		// $data['packsliderss']    = $this->obj_model->getpacksliderimg($pack_id);
 
 		$data['packsliderss'] = $this->obj_model->get_slider_pack($pack_id);
-
+	$data['packaminities'] = $this->obj_model->getpackamini($pack_id);
 		// print_r($data['packsliderss']);
 $data['location_package'] = $this->obj_model->get_location_package_detail();
-
+$data['packages'] = $this->obj_model->getpackageimg();
 		$data['location'] = $this->obj_model->getlocationimg();
 	//$data['location'] = $this->obj_model->getlocationimg_packimages($pack_id);
+			$data['authURL'] = $this->facebook->login_url();
 		$this->load->view('detail', $data);
 		}
 

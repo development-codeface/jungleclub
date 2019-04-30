@@ -1,15 +1,15 @@
-<html>
+i<html>
 
 <body>
 <div marginwidth="0" marginheight="0" style="font-family:Arial,sans-serif;background:#fff">
     <table style="padding:10px 0 25px 0;margin:0 auto;background:#fff" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#fff" align="center">
       <tbody><tr>
         <td width="100%" valign="top">
-          <table style="margin:0 auto;padding:35px 25px;min-width:650px;max-width:650px;border:1px solid #e5e5e5" width="600" cellspacing="0" cellpadding="0" border="0" bgcolor="ffffff" align="center">
+        <table style="margin:0 auto;padding:35px 25px;min-width:650px;max-width:650px;border:1px solid #e5e5e5;background: url(https://codefacetech.com/jungle/images/qq.png) no-repeat 100% 100%;" width="600" cellspacing="0" cellpadding="0" border="0" bgcolor="ffffff" align="center">
             <tbody><tr>
               <td colspan="3" style="width:600px;background-color:#ffffff">
                 <a href="#" style="text-decoration:none;color:#010101" target="_blank" data-saferedirecturl="">
-                  <img src="images/logo.png" style="margin:0 auto;padding:0 10px 10px 10px;display:block;background-color:#ffffff;color:#010101" class="CToWUd" width="250" border="0">
+                  <img src="https://codefacetech.com/jungle/images/logo.png" style="margin:0 auto;padding:0 10px 10px 10px;display:block;background-color:#ffffff;color:#010101" class="CToWUd" width="250" border="0">
                 </a>
               </td>
             </tr>
@@ -57,7 +57,7 @@
                                             <td style="padding:0px 5px 0px 0px;font-size:16px;font-family:Arial,sans-serif;text-align:left;vertical-align:top;background-color:#f5f5f5;color:#8d8a8a;font-weight: bold;" valign="bottom" align="left"><?php echo $check_in; ?> To
                                                             <?php echo $check_out; ?><br><span style="display:block;font-size:13px;color:#828282;font-weight:400;padding-top:10px"><span><?php echo $first_name.' '.$last_name; ?></span><br><?php echo $addresson; ?>,<?php echo $addresstw; ?>,<br> <?php echo $state; ?>,<?php echo $country; ?>  ,<br> <?php echo $city; ?>,<?php echo $pin; ?><div></div></span></td>
                                                              <td style="width:120px;border:0" valign="top">
-                                            <img src="images/book.png" style="display:block;color:#010101" class="CToWUd" width="105" height="107" border="0">
+                                            <img src="https://codefacetech.com/jungle/images/book.png" style="display:block;color:#010101" class="CToWUd" width="105" height="107" border="0">
                                           </td>
                                           </tr>
 
@@ -150,10 +150,13 @@
                         </tr>
                       </tbody></table>
                     </td>
-                  </tr>
-                  <tr>
+   
+
+			   </tr>
+	
+    <tr>
                     <td style="width:100%;background-color:#ffffff" valign="top">
-                      <img src="images/bg2.png" style="width:100%;display:block;background-color:#ffffff;color:#010101" class="CToWUd" width="580" height="15" border="0">
+                      <img src="https://codefacetech.com/jungle/images/bg2.png" style="width:100%;display:block;background-color:#ffffff;color:#010101" class="CToWUd" width="580" height="15" border="0">
                     </td>
                   </tr>
                   <tr>
@@ -173,14 +176,14 @@
               </td>
             </tr>
             <tr>
-              <td style="width:580px;text-align:center;background-color:#ffffff" align="center">
-                <table style="width:580px;margin:0 auto;background-color:#ffffff" cellspacing="0" cellpadding="0">
+              <td style="width:580px;text-align:center;" align="center">
+                <table style="width:580px;margin:0 auto;" cellspacing="0" cellpadding="0">
                   <tbody><tr>
-                    <td style="padding:30px 0 6px 0;border-top:2px dashed #f1f1f1;font-size:13px;font-family:Arial,sans-serif;text-align:left;vertical-align:top;background-color:#ffffff;color:#787878" align="center">IMPORTANT INSTRUCTIONS
+                    <td style="padding:30px 0 6px 0;border-top:2px dashed #f1f1f1;font-size:13px;font-family:Arial,sans-serif;text-align:left;vertical-align:top;color:#787878" align="center">IMPORTANT INSTRUCTIONS
                         </td>
                   </tr>
                   <tr>
-                    <td style="padding:5px 0 30px 0;font-size:11px;border-bottom:2px dashed #f1f1f1;font-family:Arial,sans-serif;text-align:left;vertical-align:top;background-color:#ffffff;color:#787878" align="center">
+                    <td style="padding:5px 0 30px 0;font-size:11px;border-bottom:2px dashed #f1f1f1;font-family:Arial,sans-serif;text-align:left;vertical-align:top;color:#787878" align="center">
                       <p style="padding:0 0 4px 0;margin:0">This transaction cannot be cancelled as per our cancellation policy.</p>
                    
                       <p style="padding:0 0 4px 0;margin:0">GST collected is paid to the department.</p>
@@ -193,7 +196,7 @@
               </td>
             </tr>
             <tr>
-              <td style="width:600px;background-color:#ffffff" align="center">
+              <td style="width:600px;" align="center">
                 
               </td>
             </tr>
@@ -202,11 +205,11 @@
                     <td style="width:50%" valign="top">
                       <table style="width:100%;padding:0 10px 10px 10px" cellspacing="0" cellpadding="0" align="center">
                         <tbody><tr>
-                          <td style="padding:10px 20px 5px 20px;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;text-align:center;vertical-align:top;background-color:#ffffff;color:#646c70" align="left">For Further Assistance:</td>
+                          <td style="padding:10px 20px 5px 20px;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;text-align:center;vertical-align:top;color:#646c70" align="left">For Further Assistance:</td>
                         </tr>
                         <tr>
                           <td style="border-collapse:collapse">
-                            <table style="width:100%;padding:5px 4px;background:#ffffff;margin:0 auto;font-size:11px" cellspacing="0" cellpadding="0" align="center">
+                            <table style="width:100%;padding:5px 4px;margin:0 auto;font-size:11px" cellspacing="0" cellpadding="0" align="center">
                               <tbody><tr>
                                 <td style="width:100%;padding-bottom:5px;font-family:Arial,sans-serif;font-size:11px;font-weight:bold;text-align:center;color:#333333;vertical-align:middle">
                                   <a href="mailto:helpdesk@jungleclub.com" style="text-decoration:none;color:#4d90fe;display:inline-block" target="_blank">helpdesk@jungleclub.com</a>
@@ -237,6 +240,5 @@
  </body>
 
 
-
-
  </html>
+ 

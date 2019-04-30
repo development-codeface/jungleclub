@@ -335,7 +335,7 @@ class Users_model extends CI_Model
     }
     public function checkmail($params)
     {
-        $query = $this->db->query("SELECT user_name,user_id from user_profile WHERE  user_name='$params'");
+        $query = $this->db->query("SELECT email,id from  users WHERE   email='$params'");
         return $query->result_array();
     }
     public function insert_token($token, $user)
@@ -347,10 +347,10 @@ class Users_model extends CI_Model
     }
     function user_pass_rest($str, $pass, $user)
     {
-        $query = $this->db->query(" UPDATE user_profile u
-        JOIN token t ON t.user_id = u.user_id
+        $query = $this->db->query(" UPDATE users u
+        JOIN token t ON t.user_id = u.id
         SET u.password='$pass',t.status=0
-        WHERE u.user_id=$user
+        WHERE u.id=$user
                       ");
         // echo $this->db->last_query();exit;
         return 1;
@@ -1021,4 +1021,17 @@ function deletegalleryimages($value)
             return false;
         }
     } */
+	
+	 function getpackamini($value)
+    {
+        $this->db->select('packageamenities.*,amenities.*');
+        $this->db->from('amenities');
+        $this->db->join('packageamenities', 'amenities.id =  packageamenities.amenities');
+        //$this->db->join('locationamenities', 'amenities.id =  packageamenities.amenities');
+        //  $this->db->join('package','package.location =  cities.c_id');
+        $this->db->where('packageamenities.package', $value);
+        $query = $this->db->get();
+        $row   = $query->result_array();
+        return $row;
+    }
 }

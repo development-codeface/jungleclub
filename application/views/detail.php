@@ -26,6 +26,8 @@
          rel = "stylesheet">
          <style type="text/css"> .owl-dots {display: none; }</style>
 	<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
 	
@@ -112,15 +114,17 @@
 												</span>
 											</div> -->
 											
-											
-											
-											
 													
 															<ul class="tg-tripinfo">
 									<!--	<li><span class="tg-tourduration">12 Days 11 Nights</span></li>-->
-										<li><span class="tg-tourduration tg-availabilty">Availabile Now</span></li>
-										<li><span class="tg-tourduration tg-location"></span></li>
-										<li><span class="tg-tourduration tg-peoples"> People in Group</span></li>
+									<h4><sub style="color:#000; font-weight:bold; font-size:20px;" >Aminities</sub></h4>
+								<?php 
+								foreach($packaminities as $am)
+								{ ?>
+										
+									<li  style="padding-bottom: 10px;"><span class=" "><i style="font-size: 23px;" class="<?php echo $am['icon']; ?>"></i>&nbsp;<?php echo $am['name']; ?></span></li>
+										
+								<?php  } ?>
 									</ul>
 											
 													<?php foreach($package as $pakki){ ?>
