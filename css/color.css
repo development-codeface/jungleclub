@@ -68,7 +68,7 @@ a:active,
 .tg-btnarea .tg-btn,
 .tg-pkgplanfoot .tg-btn:hover,
 .tg-btnaddtocart:hover,
-.tg-formleavecomment .tg-btn{ background:#023723; }
+.tg-formleavecomment .tg-btn{ background:#0f6b3d; }
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background:#ff7550 !important;}
 /*=============================================
 			Theme Border Color
@@ -99,7 +99,7 @@ input:focus,
 /*=============================================
 			Theme Background Color
 =============================================*/
-.tg-socialsignin .tg-btn,
+
 .tg-navigation ul li a:before,
 .tg-btnvtwo:before,
 .tg-themetabsvtwo .tg-themetabnav li a:before,
@@ -116,3 +116,5 @@ input:focus,
 blockquote,
 .tg-btnroundprev:hover,
 .tg-btnroundnext:hover{ border-color: #fee133; }
+
+.tg-socialsignin .tg-btn{ background:none; }
