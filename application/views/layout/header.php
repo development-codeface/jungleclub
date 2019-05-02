@@ -87,7 +87,7 @@ header("Pragma: no-cache");
 						<div class="tg-socialsignin" style="position: absolute; right:4%; top:20px;">
 							
 							<div class="tg-userbox">
-									<button class=" tg-btn" data-toggle="modal" data-target="#myModal" style="border: 2px solid #9b9e06;
+									<button class=" tg-btn" data-toggle="modal" data-target="#myModal" style="border: 2px solid #05050047;
 
 border-radius: 5px;" >
 <span>sign in</span> </button>

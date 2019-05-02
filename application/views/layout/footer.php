@@ -85,7 +85,7 @@
 									<form class="tg-formtheme tg-formnewsletter">
 										<fieldset>
 											<input type="email" name="email" class="form-control" placeholder="Your Email">
-											<button type="submit"><img src="images/icons/icon-08.png" alt="image destinations"></button>
+											<button type="submit"><img src="<?php echo base_url(); ?>images/icons/icon-08.png" alt="image destinations"></button>
 										</fieldset>
 									</form>
 									<span>We respect your privacy</span>

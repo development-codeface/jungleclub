@@ -87,7 +87,11 @@
 								<div class="tg-bookinginfo">
 							
 							
-							<?php foreach($package as $frq){ ?>
+							<?php foreach($package as $frq)
+{
+
+
+	?>
 							
 									<h2 style="color:#000;"> <?php echo $frq['package']; ?> – 5 Days Mountain Hiking Tour</h2>
 									
@@ -154,9 +158,32 @@
                             <?php echo "total available tent; " ?>
                           </i>
 															</div>-->
+															
+															
+														
+															
+															<?php if($frq['packagedays']==1)
+															{
+																?>
+															
 															<div class="form-group">
 																<label style="color: #000;">Check In</label>
-																	 <input type = "text" readonly id = "" name = ""  value=" <?php echo date("d-m-Y", strtotime($chkin));  ?>" class="date_field"> 
+																	 <input type = "text" readonly id = "datepicker-12" name = "datepicker-12"  value=" <?php echo date("d-m-Y", strtotime($chkin));  ?>" class="date_field dfdf" onChange="change_date();" > 
+															</div>
+															<div class="form-group"> 
+																 <label style="color: #000;">Check Out</label>
+															<!-- <input type="date" class="date_field" id="to" name="to"/>  -->
+															 <input type = "text" id = "datepicker-13" readonly name = "datepicker-13"  value=" <?php echo date("d-m-Y", strtotime($chkout));  ?>" class="date_field">
+															</div> 
+														
+														
+															<?php } else {
+																?>
+
+															<div class="form-group">
+																<label style="color: #000;">Check In</label>
+																	 <input type = "text" readonly id = "datepicker-12" name = "datepicker-12"  value=" <?php echo date("d-m-Y", strtotime($chkin));  ?>" class="date_field dfdf" onChange="change_date();" >
+                                    
 															</div>
 															<div class="form-group"> 
 																 <label style="color: #000;">Check Out</label>
@@ -165,11 +192,7 @@
 															</div> 
 														
 														
-														
-
-														
-														
-													
+															<?php } ?>
 											
 											
 											
@@ -828,11 +851,10 @@ $(document).ready(function(){
                                      </script>
 		
 	
-	
-
 <script>
 
-
+	
+	
 		$('.unfrhide').click(function() { 
 		
 		var name = $( "#rename" ).val();	
@@ -1002,13 +1024,13 @@ var	tent_rate=$( "#tent_rate" ).val();
 		var to = $( "#datepicker-13" ).val();
 		var loc_id =$( "#loc_id" ).val();
 	
-
+var pa =$( "#pakkid" ).val();
 	
 
 		$.ajax({
 			type: "POST",
 				url: "<?php echo base_url(); ?>index.php/Home/continueguest",
-				data:{no_person:no_person,no_tent:no_tent,from:from,to:to,loc_id:loc_id},
+				data:{no_person:no_person,no_tent:no_tent,from:from,to:to,loc_id:loc_id,pa:pa},
 				dataType:"text", 
 							success: function(result){
 					
@@ -1153,6 +1175,39 @@ $('.tg-destinationsslider').owlCarousel({
 			
 			
 			
+			   $(".dfdf").datepicker({
+        dateFormat: "mm/dd/yy",
+        minDate: 0,
+        onSelect: function () {
+            var dt2 = $('#datepicker-13');
+            var startDate = $(this).datepicker('getDate');
+            //add 30 days to selected date
+			
+var subDate = startDate.setDate(startDate.getDate() );
+var todate = new Date(subDate);
+var today = todate.getDate()+ 5;
+var tomnth = todate.getMonth() ;
+var endDate = today + '/' + tomnth + '/' + todate.getFullYear();
+           alert(endDate);
+        }
+    });
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 			   $("#datepicker-12").datepicker({
         dateFormat: "mm/dd/yy",
         minDate: 0,
@@ -1283,6 +1338,14 @@ $exitButton.click(function() {
   $("#overlay").fadeOut("slow");
 });
 	</script>
+	
+	
+	
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+<!--script type="text/javascript" src="<!?php echo base_url(); ?>js/jquery_validation/jquery.validate.js"></script-->
+	
+
+
 
 </body>
 

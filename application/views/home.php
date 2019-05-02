@@ -188,7 +188,7 @@ else
 						<figure data-vide-bg="poster:images/wa.jpg" data-vide-options="position: 0% 70%" style=" min-height: auto; margin-bottom: 0px !important;" >
 							<h2 class="in_wa" > Explore Wayanad </h2>
 							<h2 class="in_wa3" > when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. </h2>
-                             <h2 class="in_wa4" ><a href="" > Explore More</a></h2>
+                             <h2 class="in_wa4" ><a href="<?php echo base_url(); ?>index.php/Home/wayanad" > Explore More</a></h2>
 						</figure>
 					</div>
 				</div>

@@ -407,7 +407,7 @@ class Users_model extends CI_Model
         $this->db->select('package.*,package.package as pc,package.id as pcid,file.*');
         $this->db->from('package');
         //  $this->db->join('packageimage','packageimage.package = package.id');
-        $this->db->join('file', 'package.thumbnailimage=file.id');
+        $this->db->join('file', 'package.thumbnailimage=file.id','left');
           $this->db->where('package.status',1);
         $query = $this->db->get();
         $row   = $query->result_array();
@@ -523,7 +523,7 @@ class Users_model extends CI_Model
     LEFT JOIN locationimage AS LOCIMAGE ON LOCIMAGE.location = LOC.id 
     LEFT JOIN file AS LOCFILE ON LOCFILE.id = LOCIMAGE.id 
     LEFT JOIN locationamenities AS LOCAMENITIESMAP ON LOCAMENITIESMAP.location = LOC.id LEFT JOIN amenities AS LOCAMENITIES ON LOCAMENITIES.id =  LOCAMENITIESMAP.amenities LEFT JOIN packageamenities AS PACKMENITIESMAP ON  PACKMENITIESMAP.package = PACKAGE.id 
-    LEFT JOIN amenities AS PACKAMENITIES ON PACKAMENITIES.id =  PACKMENITIESMAP.amenities");
+    LEFT JOIN amenities AS PACKAMENITIES ON PACKAMENITIES.id =  PACKMENITIESMAP.amenities  WHERE PACKAGE.id =$dis");
         return $query->result_array();
     }
 	  function get_all_package_details_view($dis)
@@ -997,8 +997,10 @@ function deletegalleryimages($value)
     }
 	function deletelocationimages($value)
     {
-		// $query = $this->db->query("DELETE FROM  locationimage WHERE file=$value");
-        $query = $this->db->query("DELETE FROM  file WHERE id=$value");
+		
+        $query = $this->db->query("DELETE FROM  file WHERE id = $value");
+		$query = $this->db->query("DELETE FROM  locationimage WHERE file = $value");
+		//$query = $this->db->query("UPDATE   location set thumbnailimage =0 WHERE thumbnailimage=$value");
         return 1;
     }
 /*	function getamiCategory($value)

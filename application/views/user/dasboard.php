@@ -61,6 +61,7 @@ foreach($userinfo as $frq){
 										</div>
 										<div class="tg-widgetcontent">
 											<ul>
+												<li class="selected"><a href="<?php echo base_url(); ?>"><i class="icon-user"></i><span>Home</span></a></li>
 												<li class="selected"><a href="<?php echo base_url(); ?>index.php/Home/dasboard"><i class="icon-user"></i><span>Dashboard</span></a></li>
 												<li><a href="<?php echo base_url(); ?>index.php/Home/edit_profile"><i class="icon-pen2"></i><span>Edit Profile</span></a></li>
 												<li><a href="<?php echo base_url(); ?>index.php/Home/changepass"><i class="icon-lock-open3"></i><span>Change Password</span></a></li>

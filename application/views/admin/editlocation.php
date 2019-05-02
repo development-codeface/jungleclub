@@ -480,10 +480,10 @@ uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url(
 	
 		function change_sub_category()
 		{
-			alert("dfsdf");
+		//	alert("dfsdf");
 				//$("#sub_category_id > option").remove();
 			var co_id = $('#country').val();
-			alert (co_id);
+		//	alert (co_id);
             var section_id;
        // var dept_id = $('#dept_id').val();
 	   
@@ -521,7 +521,7 @@ uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url(
 			//alert("dfsdf");
 				//$("#sub_category_id > option").remove();
 			var st_id = $('#state').val();
-			alert (st_id);
+			//alert (st_id);
             var section_id;
        // var dept_id = $('#dept_id').val();
 	   

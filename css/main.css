@@ -1185,7 +1185,7 @@ li.tg-rss a { background:#ff6600; }
 	align-content: center;
 }
 .tg-bannerholder .tg-homeslider .item{
-	height: 654px;
+	height: 780px;
 	background: rgba(0, 0, 0, 0.30);
 }
 .tg-formtrip {
@@ -1999,6 +1999,7 @@ overflow: hidden;
 	height: 42px;
 	line-height: 42px;
 	position: absolute;
+	background-color: #06ab6b !important;ssssss
 }
 .tg-widgetnewsletter .tg-widgetcontent span {
 	width: 100%;

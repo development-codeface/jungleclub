@@ -301,6 +301,7 @@ if($uid!=null)
 															
 															<li class="tg-personprice"><div class="tg-perperson"><span>Total no person  </span><em><div class="quantity">
     <a href="#" class="quantity__minus"><span>-</span></a>
+	<?php 	$personcount = $this->session->userdata('no_persons'); ?>
     <input name="quantity" id="quantity" type="text" class="quantity__input" value="<?php if($personcount==0){ $personcount=1;} echo $personcount; ?>">
 	
 	

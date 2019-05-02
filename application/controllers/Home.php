@@ -2306,6 +2306,7 @@ $data['userphoto'] = $this->obj_model->get_userphoto($user_id);
 		{
 			
 		$this->data['no_person'] = $this->input->post('no_person');
+			$this->data['pakk'] = $this->input->post('pa');
 		$this->session->set_userdata('no_persons', $this->data['no_person']);
 		$this->session->set_userdata('no_tents', $this->data['no_tent']);
 		$this->session->set_userdata('froms', $this->data['from']);
@@ -2314,6 +2315,9 @@ $data['userphoto'] = $this->obj_model->get_userphoto($user_id);
 		$this->session->set_userdata('no_tent_avails', $this->data['no_tent_avail']);
 		$this->session->set_userdata('tent_rates', $this->data['tent_rate']);
 		$this->session->set_userdata('allowed_persons', $this->data['allowed_person']);
+		
+		$this->session->set_userdata('pacid', $this->data['pakk']);
+		
 		$no_person = $this->session->userdata('no_persons');
 		$no_tent = $this->session->userdata('no_tents');
 		$from = $this->session->userdata('froms');
@@ -2356,7 +2360,8 @@ $data['userphoto'] = $this->obj_model->get_userphoto($user_id);
 
 		// /////////////////////////////////
 
-		$pack_id = $this->input->post('pakkid');
+		$pack_id =  $this->session->userdata('pacid');
+		
 		$data['package'] = $this->obj_model->get_all_package_details($pack_id);
 		//print_r($data);
 		$data['personcount'] = $this->input->post('no_person');
@@ -3320,6 +3325,10 @@ else{
 				$data['packsliderss'] = $this->obj_model->get_slider_pack($pack_id);
 
 				// print_r($data['packsliderss']);
+$data['packaminities'] = $this->obj_model->getpackamini($pack_id);
+		// print_r($data['packsliderss']);
+
+$data['packages'] = $this->obj_model->getpackageimg();
 
 				$data['location'] = $this->obj_model->getlocationimg();
 				$data['package'] = $this->obj_model->get_all_package_details($pack_id);
@@ -4912,10 +4921,15 @@ $data['authURL'] = $this->facebook->login_url();
 	function packagedetails()
 		{
 		$pack_id = $this->uri->segment(3);
+		
+	// $this->session->userdata('user_id');
+	$da = date('Y-m-d');
+	$dat=date('Y-m-d', strtotime(' +1 day'));
+		//echo $orderplacedate;exit;
+	$this->session->set_userdata('frmses', $da);
+		$this->session->set_userdata('toses', $dat);
+		
 		$data['chkin'] = $this->session->userdata('frmses');
-
-		// $this->session->userdata('user_id');
-
 		$data['chkout'] = $this->session->userdata('toses');
 //print_r($data['package']);exit;
 		$data['package'] = $this->obj_model->get_all_package_details_view($pack_id);
@@ -4929,7 +4943,7 @@ $data['authURL'] = $this->facebook->login_url();
 		$data['packaminities'] = $this->obj_model->getpackamini($pack_id);
 		//print_r($data['packaminities']);
 $data['location_package'] = $this->obj_model->get_location_package_detail();
-
+$data['authURL'] = $this->facebook->login_url();
 		$data['location'] = $this->obj_model->getlocationimg();
 	//$data['location'] = $this->obj_model->getlocationimg_packimages($pack_id);
 		$this->load->view('detail', $data);
@@ -4952,8 +4966,9 @@ $data['location_package'] = $this->obj_model->get_location_package_detail();
 			'status' => '1'
 		));
 		$pack_id = $this->input->post('pakkid');
+	
 		$data['package'] = $this->obj_model->get_all_package_details($pack_id);
-		//print_r($data['package']);exit;
+		
 		$data['authURL'] = $this->facebook->login_url();
 		$this->load->view('booking', $data);
 
@@ -5298,6 +5313,7 @@ $data['packages'] = $this->obj_model->getpackageimg();
 		$pack_id = $this->uri->segment(3);
 		
 		$a= $this->obj_model->deletelocationimages($pack_id);
+		
 		//$this->load->view('admin/editlocation', $data);
 		
 	//		$data['package'] = $this->obj_model->get_package_list();
@@ -5310,5 +5326,12 @@ $data['packages'] = $this->obj_model->getpackageimg();
 		// print_r($data);exit;
 
 		$this->load->view('admin/listlocation', $data);
+		}
+		
+		function wayanad()
+		{
+		$data['authURL'] = $this->facebook->login_url();
+
+		$this->load->view('wayanad',$data);
 		}
 	}
